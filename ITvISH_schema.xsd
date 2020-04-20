@@ -1,0 +1,26 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="ItemsList">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Item" maxOccurs="unbounded" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element type="xs:string" name="Name"/>
+                            <xs:element type="xs:string" name="Price"/>
+                            <xs:element ref="Id"/>
+                            <xs:element type="xs:string" name="Img"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Id">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="(\s*\w{3}\W*\s*\d+\s*)"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+</xs:schema>
+
